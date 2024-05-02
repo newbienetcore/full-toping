@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="supplier_does_not_exist_or_was_deleted" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_is_duplicate_phone" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_is_duplicate_name" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_code_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_code_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_name_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_name_max_length_255" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_delegate_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_delegate_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="account_number_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="bank_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="bank_address_max_length_255" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_address_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_address_max_length_255" xml:space="preserve">
+        <value />
+    </data>
+    <data name="fax_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="nation_code_max_length_10" xml:space="preserve">
+        <value />
+    </data>
+    <data name="province_code_max_length_10" xml:space="preserve">
+        <value />
+    </data>
+    <data name="district_code_max_length_10" xml:space="preserve">
+        <value />
+    </data>
+    <data name="common_data_does_not_exist_or_was_deleted" xml:space="preserve">
+        <value />
+    </data>
+    <data name="common_list_id_must_not_be_empty" xml:space="preserve">
+        <value />
+    </data>
+    <data name="common_payload_is_not_valid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_id_is_invalid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_ids_is_valid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="upload_image_failed" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_parent_invalid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_parent_id_is_invalid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_order_number_must_be_greater_than_0" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_image_max_length_255" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_image_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_code_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_code_max_length_50" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_name_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="category_name_max_length_255" xml:space="preserve">
+        <value />
+    </data>
+    <data name="file_is_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="file_extension_is_not_valid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="file_must_be_smaller_than_4_MB" xml:space="preserve">
+        <value />
+    </data>
+    <data name="attribute_is_duplicate_key" xml:space="preserve">
+        <value />
+    </data>
+    <data name="attribute_is_duplicate_value" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_must_be_8_30_characters_long" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_is_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_must_contains_at_least_1_numeric_[0_9]" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_must_contains_at_least_1_lowercase_character_[a_z]" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_must_contains_at_least_1_uppercase_character_[A_Z]" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_password_must_contains_at_least_1_special_character" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_phone_is_required" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_phone_must_be_10_characters_long" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_phone_is_not_valid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="the_email_is_invalid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="supplier_is_duplicate_email" xml:space="preserve">
+        <value />
+    </data>
+</root>

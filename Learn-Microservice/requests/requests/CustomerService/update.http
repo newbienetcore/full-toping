@@ -1,0 +1,10 @@
+PUT http://localhost:5003/api/customers/3
+Content-Type: application/json
+
+{
+  "userName": "hungdc",
+  "firstName": "Đỗ Chí",
+  "lastName": "Hùng",
+  "emailAddress": "hungdc12@ichiba.vn"
+}
+

@@ -1,0 +1,12 @@
+{
+    "name": "ashion-master",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "watch:sass": "sass --watch sass/style.scss:css/style.css"
+    },
+    "dependencies": {
+        "sass": "^1.66.1"
+    }
+}

@@ -1,0 +1,31 @@
+- Độ bao phủ mã nguồn là một phép đo được sử dụng để xác định tỷ lệ mã nguồn
+trong một dự án đã được kiểm tra trong quá trình thực thi hoặc chạy các bộ kiểm tra
+tự động. Nó cho biết % mã nguồn đã được thực thi thành công trong quá trình
+chạy các bộ kiểm tra.
+
+- Thuộc tính [assembly: ExcludeFromCodeCoverage] trong tệp tin AssemblyInfo.cs
+là một cách để chỉ định rằng mã nguồn trong assembly đó không nên được tính vào
+độ bao phủ mã nguồn. Điều này đảm bảo rằng các bộ kiểm tra tự động không ghi nhận
+và không tính toán phần mã trong assembly đó trong quá trình tính toán
+tỷ lệ bao phủ.
+
+=> chạy cng cụ kiểm tra bao phủ mã nguồn, nó sẽ bỏ qua (không chạy) các đoạn mã
+trong assembly được đánh dấu này. Các công cụ kiểm tra bao phủ mã nguồn
+sẽ không được tính các đoạn mã này vào tỷ lệ bao phủ tổng thể của dự án.
+
+
+========================== MỤC ĐÍCH SỬ DỤNG ==========================
+1. Loại trừ mã không cần thiết: Thuộc tính `[assembly: ExcludeFromCodeCoverage]`
+được sử dụng để loại trừ mã nguồn không cần thiết khỏi quá trình tính toán độ 
+bao phủ mã nguồn. Điều này có thể bao gồm các đoạn mã được tạo ra tự động, đoạn mã 
+sinh tự động, hoặc đoạn mã không cần kiểm tra vì lí do nào đó.
+
+2. Giảm thiểu và tối ưu công việc kiểm tra: Khi có các đoạn mã không quan trọng
+hoặc không cần thiết trong một assembly, việc loại trừ chúng khỏi báo cáo bao phủ mã nguồn
+giúp giảm nhiễu và tối ưu quá trình kiểm tra. Điều này giúp tập trung vào việc
+kiểm tra các đoạn mã quan trọng hơn và giảm thiểu công việc kiểm tra không cần thiết.
+
+3. Phân biệt giữa mã tự động và mã thủ công: Trong một số trường hợp, có thể có mã nguồn tự động
+được tạo ra bởi công cụ phân tích hoặc các công cụ sinh mã khác. Việc đánh dấu mã tự động này là
+[assembly: ExcludeFromCodeCoverage] giúp phân biệt rõ ràng giữa mã nguồn tự động 
+và mã nguồn được viết thủ công.

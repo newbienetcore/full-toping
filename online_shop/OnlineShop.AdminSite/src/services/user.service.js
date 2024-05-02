@@ -1,0 +1,10 @@
+import { APIClient } from 'core/helpers/api_helper';
+const baseUrl = `api/users`;
+const api = new APIClient();
+
+export const Get = (params) => api.get(baseUrl, params);
+export const Create = (params) => api.create(baseUrl, params);
+export const Delete = (params) => api.delete(baseUrl, params);
+export const UpdateInfo = (params) => api.create(baseUrl, params);
+export const UpdateAvatar = (params) => api.create(baseUrl + '/change-avatar', params);
+export const ChangePassword = (params) => api.create(baseUrl + '/change-password', params);

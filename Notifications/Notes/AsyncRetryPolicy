@@ -1,0 +1,42 @@
++ AsyncRetryPolicy là một lớp thư viện Polly, được sử dụng để xử lý việc thử lại (retry)
+các tác vụ không đồng bộ. Nó cung cấp một cách linh hoạt để tái hiện một tác vụ khi xảy ra
+lỗi, hoặc theo một số chính sách xác định.
+
++ Một ví dụ cụ thể về việc sử dụng AsyncRetryPolicy:
+
+var retryPolicy =  Policy
+      .Handle<HttpRequestException>() // Xử lý exception cụ thể (ở đây là HttpRequestException)
+      .WaitAndRetryAsync(
+          retryCount: 3, // Số lần thử lại
+          sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), // Thời gian chờ giữa các lần thử lại
+          onRetry: (exception, timespan, retryAttempt, context) =>
+          {
+              // Xử lý sau mỗi lần thử lại
+              Console.WriteLine($"Retry #{retryAttempt} due to {exception.Message}");
+          });
+
+
+// Sử dụng retryPolicy để thực hiện một tác vụ không đồng bộ
+await retryPolicy.ExecuteAsync(async () =>
+{
+    // Các công việc không đồng bộ sẽ được thực hiện ở đây
+    await SomeAsyncTask();
+});
+
+Trong ví dụ trên, chúng ta tạo một AsyncRetryPolicy bằng cách sử dụng phương thức 
+WaitAndRetryAsync. Retry policy này sẽ thử lại tác vụ không đồng bộ trong trường hợp 
+xảy ra HttpRequestException, và sẽ thử lại tối đa 3 lần. Thời gian chờ giữa các lần 
+thử lại được tính toán theo công thức  retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+tức là thời gian chờ sẽ tăng lên theo một mũ của 2 với số lần thử lại.
+
+Trong phần onRetry, bạn có thể xử lý các hành động sau mỗi lần thử lại, chẳng hạn như ghi 
+log, thông báo, hoặc các thao tác khác.
+
+Sau đó, sử dụng retryPolicy để thực hiện một tác vụ không đồng bộ bằng cách sử dụng
+phương thức ExecuteAsync. Retry policy sẽ tự động xử lý việc thử lại tác vụ khi xảy ra lỗi
+theo các chính sách đã được định nghĩa.
+
+
+Việc sử dụng AsyncRetryPolicy giúp đảm bảo tính ổn định 
+và tin cậy cho các tác vụ không đồng bộ trong trường hợp xảy ra lỗi tạm thời,
+ và cho phép kiểm soát được số lần thử lại và thời gian chờ giữa các lần thử lại.

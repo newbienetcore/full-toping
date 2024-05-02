@@ -1,0 +1,37 @@
+version: '3'
+services:
+#  webapi:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - 8080:80
+#    networks:
+#      - app_network
+  db:
+    image: postgres:latest
+    ports:
+      - 5555:5432
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  redis:
+    image: redis:7.0.5-alpine
+    ports:
+      - 6379:6379
+    container_name: redis
+  rabbitmq:
+    image: masstransit/rabbitmq:latest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+      - RABBITMQ_ERLANG_COOKIE=guest
+

@@ -1,0 +1,6 @@
+POST http://localhost:5115/api/crawler
+Content-Type: application/json
+
+{
+  "source": "https://fptshop.com.vn/dien-thoai?sort=gia-cao-den-thap&trang=2"
+}

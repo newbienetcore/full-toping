@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "63405de6-000f-4a03-acb8-5dc40b03f547",
+		"name": "Tedu Courses API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"tedu-421x\",\n    \"title\": \"Làm chủ Docker để chinh phục DevOps\",\n    \"content\": \"<p>Docker là một nền tảng để xây dựng (build), chạy (running) và vận chuyển (shipping) các ứng dụng một cách dễ dàng và linh hoạt. Đó là lý do tại sao hầu hết các công ty sử dụng nó và đang tìm kiếm các kỹ sư phần mềm hoặc DevOps có kỹ năng Docker.<p>\",\n    \"price\": 2000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Course By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/courses/60bc0a90a8a751bb79741835",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses",
+						"60bc0a90a8a751bb79741835"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Course By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/courses/60bc0a90a8a751bb79741835",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses",
+						"60bc0a90a8a751bb79741835"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Course By Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"tedu-42xxxx\",\n    \"title\": \"Làm chủ Docker để chinh phục DevOps\",\n    \"content\": \"<p>Docker là một nền tảng để xây dựng (build), chạy (running) và vận chuyển (shipping) các ứng dụng một cách dễ dàng và linh hoạt. Đó là lý do tại sao hầu hết các công ty sử dụng nó và đang tìm kiếm các kỹ sư phần mềm hoặc DevOps có kỹ năng Docker.<p>\",\n    \"price\": 2000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/courses/60bc0a90a8a751bb79741835",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses",
+						"60bc0a90a8a751bb79741835"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Course By Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Làm chủ Docker để chinh phục DevOps. ddddd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/courses/60bc0a90a8a751bb79741835",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"courses",
+						"60bc0a90a8a751bb79741835"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

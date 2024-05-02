@@ -1,0 +1,11 @@
+NVARCHAR(MAX):
+
+builder.Property(e => e.ColumnName)
+    .HasMaxLength(int.MaxValue)
+    .IsUnicode(true);
+    
+VARCHAR(MAX):
+
+builder.Property(e => e.ColumnName)
+   .HasMaxLength(int.MaxValue)
+   .IsUnicode(false);

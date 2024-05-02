@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- RabbitMQ-->
+        <PackageReference Include="Aspire.RabbitMQ.Client" Version="8.0.0-preview.6.24214.1" />
+        <PackageReference Include="OpenTelemetry.Api" Version="1.8.1" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0"/>
+        <PackageReference Include="Polly.Core" Version="8.3.1"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\MessageBroker.Abstractions\MessageBroker.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

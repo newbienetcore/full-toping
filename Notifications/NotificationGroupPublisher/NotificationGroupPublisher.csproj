@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit" Version="7.0.0" />
+        <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Notifications.WebApi\Notifications.WebApi.csproj" />
+      <ProjectReference Include="..\Shared\MessageContracts\Shared.MessageBroker.RabbitMQ\Shared.MessageBroker.RabbitMQ.csproj" />
+      <ProjectReference Include="..\Shared\MessageContracts\Shared.Notification.MessageContracts\Shared.Notification.MessageContracts.csproj" />
+      <ProjectReference Include="..\Shared\Shared.MultiTenancy.Abstractions\Shared.MultiTenancy.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

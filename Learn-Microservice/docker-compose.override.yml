@@ -1,0 +1,173 @@
+version: '3.8'
+
+services: 
+  # database section
+  
+  # order database: sql server
+  orderdb:
+    container_name: orderdb
+    environment:
+      SA_PASSWORD: "Dochihung1!"
+      ACCEPT_EULA: "Y"
+    restart: always
+    volumes:
+      - sqlserver_data:/var/lib/sqlserver/data
+    ports:
+      - "1435:1433"
+  
+  # product database: my sql
+  productdb:
+    container_name: productdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "Dochihung"
+      ACCEPT_EULA: "Y"
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    
+    
+    
+  # customer database: postgres
+  customerdb: 
+    container_name: customerdb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=customer_db
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    
+    
+    
+    
+  # basket database: redis caching
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
+    
+    
+    
+  # inventory database: mongo
+  inventorydb: 
+    container_name: inventorydb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+  
+  # infrastructure section
+
+  # rabbit mq
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  
+  # pgadmin
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=hungdc@ichiba.com
+      - PGADMIN_DEFAULT_PASSWORD=hungdc
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+  
+  # portainer
+  portainer: 
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+  
+  # elasticsearch
+  elasticsearch:
+    container_name: elasticsearch
+    environment:
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+  
+  # kibana
+  kibana: 
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on: 
+      - elasticsearch
+    ports:
+      - "5601:5601"
+      
+      
+      
+  # microservices api sections
+  product.api:
+    container_name: product.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "ConnectionStrings:DefaultConnection=Server=productdb;Port=3306;Database=product_db;Uid=root;Pwd=Dochihung"
+    depends_on: 
+      - productdb
+    ports:
+      - "6002:80"
+    restart: always
+  
+  customer.api:
+    container_name: customer.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "ConnectionStrings:DefaultConnectionString=Server=customerdb;Port=5432;Database=customer_db;User Id=admin;Password=admin"
+    depends_on:
+      - customerdb
+    ports:
+      - "6003:80"
+    restart: always
+  
+  basket.api:
+    container_name: basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "CacheSetting:ConnectionString=basketdb:6379?"
+    depends_on:
+      - basketdb
+    ports:
+      - "6004:80"
+    restart: always
+    
+  ordering.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - "ConnectionStrings:DefaultConnectionString=Server=orderdb;Database=order_db;User Id=sa;Password=Dochihung1!;Encrypt=False"
+    depends_on:
+      - orderdb
+    ports:
+      - "6001:80"
+    restart: always
+  
+  

@@ -1,0 +1,9 @@
+POST http://localhost:5003/api/customers
+Content-Type: application/json
+
+{
+  "userName": "admin",
+  "firstName": "Đỗ Chí",
+  "lastName": "Hùng",
+  "emailAddress": "hungdc12@ichiba.vn"
+}

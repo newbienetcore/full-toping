@@ -1,0 +1,9 @@
+PUT http://localhost:5000/api/notification-groups/299506c2-4984-4d91-90e3-ef3a43714638
+Content-Type: application/json
+
+{
+  "id": "299506c2-4984-4d91-90e3-ef3a43714638",
+  "code": "1",
+  "name": "Notification Group 1",
+  "appId": "7a4329dc-b31b-402c-a618-bc06706a2b48"
+}

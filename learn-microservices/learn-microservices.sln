@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4F743A2-03C6-41F3-906E-19A70CAA8612}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.override.yml = docker-compose.override.yml
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4DE677BD-E278-4CA6-B225-8F4A6D5D4EFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{760BF4A9-7C5F-40D6-85AB-817E79B78DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{C9445F8E-0718-4DCF-9122-71DABCE97A5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4594B0AD-438B-4C24-85A2-C9E60C0A9E49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{67F973BD-3EB7-4931-B115-A48D6CC5B24C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{25D6FB18-2A9B-4E08-A27B-13B4905E8F8C}"
+	ProjectSection(SolutionItems) = preProject
+		resources\Api Gateway Routing List.xlsx = resources\Api Gateway Routing List.xlsx
+		resources\microservices-solution-architect.jpg = resources\microservices-solution-architect.jpg
+		resources\postgresql_tutorial.pdf = resources\postgresql_tutorial.pdf
+		resources\Redis-For-Dummies_FINAL.pdf = resources\Redis-For-Dummies_FINAL.pdf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "src\BuildingBlocks\SharedKernel\SharedKernel.csproj", "{9B8F7219-4BFD-4EFD-B103-1975E8462B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHealthStatus", "src\WebApps\WebHealthStatus\WebHealthStatus.csproj", "{1DAFE6FE-6340-4934-80B5-FFE4FF323E11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{EFDCD502-2E90-4BB0-B571-8F11D4209ABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "src\Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{9AD4EAC9-35C5-4962-918F-D0E81903F51F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Application", "src\Services\Catalog\Catalog.Application\Catalog.Application.csproj", "{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "src\Services\Catalog\Catalog.Domain\Catalog.Domain.csproj", "{A7262324-351C-4637-ACEB-136057B16E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "src\Services\Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{A579DDAC-1707-4744-B4EC-707A09FBC0E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9445F8E-0718-4DCF-9122-71DABCE97A5A} = {4DE677BD-E278-4CA6-B225-8F4A6D5D4EFE}
+		{4594B0AD-438B-4C24-85A2-C9E60C0A9E49} = {4DE677BD-E278-4CA6-B225-8F4A6D5D4EFE}
+		{67F973BD-3EB7-4931-B115-A48D6CC5B24C} = {4DE677BD-E278-4CA6-B225-8F4A6D5D4EFE}
+		{9B8F7219-4BFD-4EFD-B103-1975E8462B02} = {C9445F8E-0718-4DCF-9122-71DABCE97A5A}
+		{1DAFE6FE-6340-4934-80B5-FFE4FF323E11} = {67F973BD-3EB7-4931-B115-A48D6CC5B24C}
+		{EFDCD502-2E90-4BB0-B571-8F11D4209ABA} = {4594B0AD-438B-4C24-85A2-C9E60C0A9E49}
+		{9AD4EAC9-35C5-4962-918F-D0E81903F51F} = {EFDCD502-2E90-4BB0-B571-8F11D4209ABA}
+		{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534} = {EFDCD502-2E90-4BB0-B571-8F11D4209ABA}
+		{A7262324-351C-4637-ACEB-136057B16E67} = {EFDCD502-2E90-4BB0-B571-8F11D4209ABA}
+		{A579DDAC-1707-4744-B4EC-707A09FBC0E2} = {EFDCD502-2E90-4BB0-B571-8F11D4209ABA}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B8F7219-4BFD-4EFD-B103-1975E8462B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8F7219-4BFD-4EFD-B103-1975E8462B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8F7219-4BFD-4EFD-B103-1975E8462B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8F7219-4BFD-4EFD-B103-1975E8462B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DAFE6FE-6340-4934-80B5-FFE4FF323E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DAFE6FE-6340-4934-80B5-FFE4FF323E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DAFE6FE-6340-4934-80B5-FFE4FF323E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DAFE6FE-6340-4934-80B5-FFE4FF323E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD4EAC9-35C5-4962-918F-D0E81903F51F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD4EAC9-35C5-4962-918F-D0E81903F51F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD4EAC9-35C5-4962-918F-D0E81903F51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD4EAC9-35C5-4962-918F-D0E81903F51F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0B9FF9-6ECA-4BA3-ADD0-5495030C9534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7262324-351C-4637-ACEB-136057B16E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7262324-351C-4637-ACEB-136057B16E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7262324-351C-4637-ACEB-136057B16E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7262324-351C-4637-ACEB-136057B16E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A579DDAC-1707-4744-B4EC-707A09FBC0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A579DDAC-1707-4744-B4EC-707A09FBC0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A579DDAC-1707-4744-B4EC-707A09FBC0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A579DDAC-1707-4744-B4EC-707A09FBC0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

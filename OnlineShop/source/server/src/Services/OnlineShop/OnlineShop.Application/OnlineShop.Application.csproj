@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\SharedKernel\SharedKernel.csproj" />
+      <ProjectReference Include="..\OnlineShop.Domain\OnlineShop.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Common\" />
+      <Folder Include="Features\VersionOne\Auth\" />
+      <Folder Include="Features\VersionOne\Cpanel\Command\UpdateRole\" />
+      <Folder Include="Features\VersionOne\User\Command\" />
+      <Folder Include="Features\VersionOne\User\Queries\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Properties\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Properties\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Apis.Auth" Version="1.62.1" />
+    </ItemGroup>
+
+</Project>

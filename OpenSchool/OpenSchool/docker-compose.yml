@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  #database section
+  identity-db: 
+    image: postgres:alpine3.16
+
+  file-manager-db:
+    image: postgres:alpine3.16
+
+  mailbox-db: 
+    image: postgres:alpine3.16
+
+  # shoool-db: 
+  #   image: mysql:8.0.29
+  
+  # school-fee-db:
+  #   image: postgres:alpine3.16
+
+
+  # notification-db: 
+  #   image: postgres:alpine3.16
+
+  # exam-db:
+  #   image: mongo
+
+  # hangfire-db:
+  #   image: mongo
+
+  distributed-cache:
+    image: redis
+
+  #infrastructure section
+  pgadmin:
+    image: dpage/pgadmin4
+
+  # portainer:
+  #   image: portainer/portainer-ce
+
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.17.2
+
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:7.17.2
+
+  #microservices api section
+
+#network section
+networks:
+  default:
+    name: open_school_microservices
+    driver: bridge
+
+#volumes section
+volumes:
+  identity_data:
+    name: identity_data
+  file_manager_data:
+    name: file_manager_data
+  mailbox_data:
+    name: mailbox_data
+  pgadmin_data:
+    name: pgadmin_data
+
+
+

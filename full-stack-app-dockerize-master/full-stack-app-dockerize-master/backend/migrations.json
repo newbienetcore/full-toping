@@ -1,0 +1,8 @@
+{
+  "uri": "mongodb://localhost:27017/tedu-courses",
+  "migrationsDir": "migrations",
+  "options": {
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true
+  }
+}

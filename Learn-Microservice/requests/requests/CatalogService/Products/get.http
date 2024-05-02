@@ -1,0 +1,2 @@
+GET http://0.0.0.0:6002/swagger/index.html
+Content-Type: application/json

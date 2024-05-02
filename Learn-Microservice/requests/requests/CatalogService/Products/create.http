@@ -1,0 +1,12 @@
+POST http://0.0.0.0:6002/api/products/1111
+Content-Type: application/json
+
+{
+  "no": "01111",
+  "name": "Iphone 16 Pro Max 1",
+  "summary": "Summary Iphone 16 Pro Max",
+  "description": "Description Iphone 16 Pro Max",
+  "price": 200000,
+  "brandId": "08db6d53-36f1-49ad-86ff-d5cb9340c470",
+  "categoryId": "08db6d53-36d6-46b0-82ad-91e7dc6f2562",
+}

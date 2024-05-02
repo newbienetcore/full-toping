@@ -1,0 +1,23 @@
+- Oop
+- Anh ý cho em  1 cái tree và bảo em thiết kế database để làm sao để lưu cái tree vào 
+database (về cơ bản là category cha-con). Xong anh bảo giờ anh có id của 1 node anh muốn 
+query tất cả các cha, ông, tổ tiên của nó và tất cả các con của nó thì làm sao tối ưu 
+câu query (thêm 1 column Path)
+- Middleware, action filter, custom
+- DI: addsingleton addscoped addtransient
+- Request life cycle
+- Repository, UnitOfWork
+- Em biết mấy mô hình phân quyền? Em trình bày mô hình phân quyền rbac
+- Index SQL: em trình bày ưu, nhược điểm, và đối với các trường có data type text thì không có tác dụng,
+có mấy loại index, nếu đánh quá nhiều index sẽ dẫn tới gì (Giảm hiệu suất ghi dữ liệu, mỗi index nó sẽ tạo ra 
+một tree để lưu trữ, nếu đánh quá nhiều sẽ tốn bộ nhớ, cũng có thể làm tăng thời gian truy vẫn mặc dù index ưu 
+điểm là tăng ...)
+- Exchange type của RabbitMQ
+- Redis cache
+- ORM: ef core, dapper, ado.net
+- default addcontext đăng kí di addscoped nếu là addtransient thì sẽ xảy ra vấn đề gì (nếu 1 application cần 2 repository khác nhau, mà để addcontext là addtransient thì 2 repo làm việc trên 2 instance khác nhau 
+=> không xử lý transaction được)
+- biết viết unit test khum
+
+- anh hỏi biết clean architecture (hồi đó em cũng không hiểu ý anh muốn hỏi gì)
+

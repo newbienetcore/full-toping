@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - tedu-courses:/data/db
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    image: tedu_courses_api:1
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      DB_CONNECTION_STRING: mongodb://db
+      DB_NAME: tedu-courses
+    restart: unless-stopped
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    image: tedu_courses_web:1
+    ports:
+      - 80:80
+    restart: unless-stopped
+volumes:
+  tedu-courses:

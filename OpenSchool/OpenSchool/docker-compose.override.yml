@@ -1,0 +1,61 @@
+version: '3.8'
+
+services: 
+  #identity database: postgres
+  identity-db:
+    container_name: identity-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=identitydb
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - identity_data:/var/lib/postgresql/data
+  
+  # file manager database
+  file-manager-db:
+    container_name: file-manager-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=filemanagerdb
+    restart: always
+    ports:
+      - "5434:5432"
+    volumes:
+      - file_manager_data:/var/lib/postgresql/data
+
+  # mailbox database
+  mailbox-db:
+    container_name: mailbox-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=mailboxdb
+    restart: always
+    ports:
+      - "5435:5432"
+    volumes:
+      - mailbox_data:/var/lib/postgresql/data
+
+  # distributed cache: redis
+  distributed-cache:
+    container_name: distributed-cache
+    restart: always
+    ports:
+      - "6379:6379"
+  
+
+  #infrastructure section
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
